@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+blocked.$inject = ['db', 'Sequelize'];
+export default function blocked(sequelize, DataTypes) {
   return sequelize.define('blocked', {
     action: {
       type: DataTypes.STRING,
@@ -16,6 +17,8 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     }
   }, {
-    tableName: 'blocked'
+    tableName: 'blocked',
+    createdAt: false,
+    updatedAt: false
   });
 };

@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+domains.$inject = ['db', 'Sequelize'];
+export default function domains(sequelize, DataTypes) {
   return sequelize.define('domains', {
     parent: {
       type: DataTypes.STRING,
@@ -14,5 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'domains'
+    createdAt: false,
+    updatedAt: false
   });
 };

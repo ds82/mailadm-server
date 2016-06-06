@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+forward.$inject = ['db', 'Sequelize'];
+export default function forward(sequelize, DataTypes) {
   return sequelize.define('forward', {
     destination: {
       type: 'ARRAY',
@@ -23,5 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'forward'
+    createdAt: false,
+    updatedAt: false
   });
 };

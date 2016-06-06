@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+access.$inject = ['db', 'Sequelize'];
+export default function access(sequelize, DataTypes) {
   return sequelize.define('access', {
     action: {
       type: DataTypes.STRING,
@@ -12,5 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'access'
+    createdAt: false,
+    updatedAt: false
   });
 };

@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+transport.$inject = ['db', 'Sequelize'];
+export default function transport(sequelize, DataTypes) {
   return sequelize.define('transport', {
     transport: {
       type: DataTypes.STRING,
@@ -14,5 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'transport'
+    createdAt: false,
+    updatedAt: false
   });
 };

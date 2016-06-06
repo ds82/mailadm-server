@@ -5,7 +5,11 @@ const config = require('../config/config.json');
 const express = require('express');
 const Sequelize = require('sequelize');
 
-const MODULES = ['modules/users'];
+// todo: move to config
+const MODULES = [
+  'modules/users',
+  'modules/blocked'
+];
 
 function start() {
   tiny.setResolver(tiny.getDefaultResolver(require));
